@@ -8,15 +8,18 @@ use Illuminate\Http\Request;
 
 class SuratController extends Controller
 {
+    //ini buat nampilin view utama/home
     public function index(){
         $jenisSurat = JenisSurat::all();
         return view('user.index', $jenisSurat);
     }
 
+    //nampilin form surat
     public function buatsurat(){
         $jenisSurat = Jenissurat::all();
         return view('user.inputsurat', $jenisSurat);
     }
+
 
 
     public function admin(){
@@ -29,47 +32,17 @@ class SuratController extends Controller
     }
 
     public function store(Request $request)
-    {
-       
-        $validatedData = $request->validate([
-            'nama' => 'required|max:50',
-            'email' => 'required|email:dns|unique:konsultans',
-            'phone' => 'required|min:10',
-            'keahlian' => 'required',
-            'alamat' => 'required',
-            'pengalaman' =>'required',
-            'deskripsi' =>'required',
-            'foto' => 'image|file',
-            'foto_cv' => 'image|file',    
+    {      
+        $validateData = $request->validate([
+            'name' => 'required|max:255',
+            'jenissurat' => 'required',
+            'nik' => 'required|unique:users',
         ]);
-        // $this->validate($request, [
-        //     'nama' => 'required|max:50',
-        //     'email' => 'required|email:dns|unique:konsultans',
-        //     'phone' => 'required|min:10',
-        //     'keahlian' => 'required',
-        //     'alamat' => 'required',
-        //     'pengalaman' =>'required',
-        //     'deskripsi' =>'required',
-        //     'foto' => 'image|file',
-        //     'foto_cv' => 'image|file',    
-        // ]);
-        if($request->file('foto')){
-            $validatedData['foto'] = $request->file('foto')->store('konsultan-foto');
-        }
+         // Tambahkan kode surat acak
+         $validateData['nomorSurat'] = Str::random(10);
+        Surat::create($validateData);
 
-        if($request->file('foto_cv')){
-            $validatedData['foto_cv'] = $request->file('foto_cv')->store('konsultan-foto-cv');
-        }
-        $itemuser = $request->user();
-        $validatedData['user_id'] = $itemuser->id;
-        //ambil data user yang login
-       
-        
-        Konsultan::create($validatedData);
-
-        
-
-        return redirect('/Konsultan')->with('success',  'Data Anda Tersimpan');
+        return redirect('/view-surat')->with('success',  'Surat berhasil dibuat');
     }
 
 

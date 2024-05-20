@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Surat extends Model
 {
     use HasFactory;
+
+    public function tipe_surat()
+    {
+        return $this->belongsTo(Jenissurat::class, 'id');
+    }
+
+    protected $fillable = [
+        'name',
+        'nik',
+        'jenissurat',
+        'nomorSurat'
+    ];
 }
