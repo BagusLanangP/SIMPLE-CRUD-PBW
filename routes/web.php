@@ -14,3 +14,7 @@ Route::get('/view', function () {
 });
 Route::get('/buatsurat', [SuratController::class, 'buatsurat']);
 
+Route::post('/buatsurat/store', [SuratController::class, 'store']);
+
+
+

@@ -4,20 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Surat;
 use App\Models\Jenissurat;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class SuratController extends Controller
 {
     //ini buat nampilin view utama/home
     public function index(){
-        $jenisSurat = JenisSurat::all();
+        $jenisSurat = Jenissurat::all();
         return view('user.index', $jenisSurat);
     }
 
     //nampilin form surat
     public function buatsurat(){
         $jenisSurat = Jenissurat::all();
-        return view('user.inputsurat', $jenisSurat);
+        $data = array('jenisSurat' => $jenisSurat);
+        return view('user.inputsurat', $data);
     }
 
 
@@ -32,17 +34,22 @@ class SuratController extends Controller
     }
 
     public function store(Request $request)
-    {      
+    {  
+            
         $validateData = $request->validate([
             'name' => 'required|max:255',
             'jenissurat' => 'required',
-            'nik' => 'required|unique:users',
+            'nik' => 'required'
+            // 'nik' => 'required|unique:users',
         ]);
+       
+    
          // Tambahkan kode surat acak
-         $validateData['nomorSurat'] = Str::random(10);
+        $validateData['nomorSurat'] = Str::random(10);
         Surat::create($validateData);
+        
 
-        return redirect('/view-surat')->with('success',  'Surat berhasil dibuat');
+        return redirect('user.viewsurat');
     }
 
 
