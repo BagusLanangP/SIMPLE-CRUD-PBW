@@ -35,17 +35,17 @@ class SuratController extends Controller
 
     public function store(Request $request)
     {  
-            
         $validateData = $request->validate([
             'name' => 'required|max:255',
             'jenissurat' => 'required',
-            'nik' => 'required'
+            'kelas' => 'required',
+            'prodi' => 'required'
             // 'nik' => 'required|unique:users',
         ]);
        
     
          // Tambahkan kode surat acak
-        $validateData['nomorSurat'] = Str::random(10);
+        // $validateData['nomorSurat'] = Str::random(10);
         Surat::create($validateData);
         
 

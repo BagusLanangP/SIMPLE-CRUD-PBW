@@ -5,8 +5,40 @@
 
 @section('content')
     
+      <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="text-center">TEMPLATE SURAT A3</h1>
+                <form method="post" action="/buatsurat/store">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="kategori" class="form-label">Pilih Jenis Surat</label>
+                        <select class="form-select form-control" id="kategori" name="jenissurat">
+                            @foreach($jenisSurat as $jenis)
+                                <option value="{{ $jenis->id }}" {{ old('category_id') == $jenis->id ? 'selected' : '' }}>{{ $jenis->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="kelas" class="form-label">kelas</label>
+                        <input type="text" class="form-control" id="kelas" name="kelas" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="prodi" class="form-label">prodi</label>
+                      <input type="text" class="form-control" id="prodi" name="prodi" required>
+                  </div>
+                    <button type="submit" class="btn btn-primary">Buat surat</button>
+                </form>
+            </div>
+        </div>
         
-        <form method="post" action="/buatsurat/store" >
+
+      </div>
+        {{-- <form method="post" action="/buatsurat/store" >
           <div class="mb-3">
             @csrf
             <label for="kategori" class="form-label">Kategori</label>
@@ -30,7 +62,7 @@
           </div>
           <button type="submit" class="btn btn-primary">Buat surat</button>
         </form>
-      
+       --}}
 
 @endsection
 
@@ -89,3 +121,5 @@
     </div>
   </div>
 </div> --}}
+
+

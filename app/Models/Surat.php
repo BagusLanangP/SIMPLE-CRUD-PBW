@@ -16,8 +16,8 @@ class Surat extends Model
 
     protected $fillable = [
         'name',
-        'nik',
+        'kelas',
         'jenissurat',
-        'nomorSurat'
+        'prodi'
     ];
 }

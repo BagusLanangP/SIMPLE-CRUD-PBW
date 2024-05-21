@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('surats', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('jenissurat')->unsigned();
-            $table->string('nomorSurat');
+            // $table->string('nomorSurat');
+            $table->string('kelas');
+            $table->string('prodi');
             $table->string('name');
-            $table->string('nik');
+            // $table->string('nik');
             $table->timestamps();
 
             $table->foreign('jenissurat')->references('id')->on('jenissurats');

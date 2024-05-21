@@ -13,5 +13,7 @@ Route::get('/buatsurat', [SuratController::class, 'buatsurat']);
 
 Route::post('/buatsurat/store', [SuratController::class, 'store']);
 
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
 
 
