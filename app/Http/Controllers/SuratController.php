@@ -33,7 +33,7 @@ class SuratController extends Controller
 
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Surat $surat)
     {  
         $validateData = $request->validate([
             'name' => 'required|max:255',
@@ -49,9 +49,14 @@ class SuratController extends Controller
         Surat::create($validateData);
         
 
-        return redirect('user.viewsurat');
+        return redirect('user/viewsurat');
     }
 
+    public function show(Surat $surat){
+        $surat = Surat::latest()->first();
+        $data = array('s' => $surat);
+        return view('user.viewsurat', $data);
+    }
 
 
 }
