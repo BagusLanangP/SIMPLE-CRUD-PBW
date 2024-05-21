@@ -5,9 +5,12 @@ use App\Http\Controllers\SuratController;
 
 
 
-Route::post('/', function () {
+Route::get('/', function () {
     return view('user.index');
 });
 
+Route::get('/view', function () {
+    return view('user.viewsurat');
+});
 Route::get('/buatsurat', [SuratController::class, 'buatsurat']);
 
