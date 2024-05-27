@@ -1,0 +1,43 @@
+.form-surat-box{
+    display: none;
+}
+
+.history-surat-content{
+    display: none;
+}
+
+
+.linkCreateSurat {
+    position: relative;
+    left: -100%; /* Mulai dari luar layar */
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    /* padding: 20px; */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.linkViewAllSurat{
+    position: relative;
+    right: -100%; /* Mulai dari luar layar */
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    /* padding: 20px; */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.is-invalid {
+    border-color: #dc3545; /* warna merah */
+    padding-right: calc(1.5em + .75rem);
+    background-image: url('data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16"%3e%3cpath d="M8.154.188a1.502 1.502 0 0 1 1.692 0l6.8 4.534a1.5 1.5 0 0 1 .698 1.27v8.532a1.5 1.5 0 0 1-1.5 1.5H1.256a1.5 1.5 0 0 1-1.5-1.5V6.992a1.5 1.5 0 0 1 .698-1.27L8.154.188zm.545 5.139a.5.5 0 0 0-.546 0l-6.8 4.533A.5.5 0 0 0 .5 10.133V14.5a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5v-4.367a.5.5 0 0 0-.255-.434l-6.8-4.534z"/%3e%3c/svg%3e');
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+
+.text-white{
+    color: white;
+}
+
+i{
+    font-size: 100px;
+}

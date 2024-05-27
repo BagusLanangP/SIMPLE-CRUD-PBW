@@ -22,6 +22,17 @@ class SuratController extends Controller
         return view('user.inputsurat', $data);
     }
 
+    public function HistorySuratUser(){
+        //ini view nya masi nampilin untuk semua user, karna belom ada regis sama logn
+        $surat = Surat::all();
+        $data = array('surat' => $surat);
+        return view('Homepage.historySurat', $data);
+    }
+
+    public function delete(){
+        
+    }
+
 
 
     public function admin(){

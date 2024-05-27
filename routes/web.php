@@ -6,8 +6,11 @@ use App\Http\Controllers\SuratController;
 
 
 Route::get('/', function () {
-    return view('user.index');
+    return view('Homepage.index');
 });
+
+Route::get('/historysurat', [SuratController::class, 'HistorySuratUser']);
+
 
 Route::get('/view', function () {
     return view('user.viewsurat');
