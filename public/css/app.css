@@ -1,0 +1,771 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+* {
+    margin: 0px;
+}
+
+:root {
+    /* --defaultFont:  */
+    --body-font: "Poppins", sans-serif;
+    --big-font-size: 3.7rem;
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: 0.938rem;
+    --smaller-font-size: 0.75rem;
+    --smallers-font-size: 0.5rem;
+
+    /* Default Color */
+    --firstColorWhite: hsl(0, 0%, 100%);
+    --SecColorGrey: hsl(220, 23%, 97%);
+    --ThirdColorGreen: hsl(147, 37%, 52%);
+    --blueChat: hsl(207, 52%, 49%);
+    --Red: hsl(0, 69%, 60%);
+    --ForthColorBlack: hsl(147, 0%, 15%);
+    --FiveColorSecGreen: hsl(147, 36%, 95%);
+    --SixthColorGreenOld: hsl(166, 80%, 17%);
+    --warning: hsl(50, 100%, 53%);
+    --create: hsl(240, 100%, 50%);
+    --SevenColorGreyOld: hsl(0, 0%, 47%);
+
+    /* Padding  */
+    --paddingContentRL: 8rem;
+    --paddingContentTB: 6rem;
+    --paddingContentRL2: 10rem;
+    --paddingInElemenMini: 4rem;
+    --paddingInElemenMini1: 3rem;
+    --paddingInElemenMini2: 1.5rem;
+}
+
+/* 
+.dark-theme{
+
+} */
+
+/* Global start */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: var(--body-font);
+}
+
+img {
+    max-height: 100vh;
+    width: 100%; /* Lebar 100% agar sesuai dengan lebar container */
+    object-fit: cover;
+}
+
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+/* Optionally, you can add some styling back if needed */
+ul,
+li {
+    margin-bottom: 5px; /* Add some spacing between list items if needed */
+}
+
+a {
+    text-decoration: none;
+    color: var(--ForthColorBlack);
+}
+
+.card-product {
+    width: 12.1rem;
+    height: auto;
+}
+
+.card-product img {
+    display: cover;
+    width: 10rem;
+    height: 10rem;
+}
+
+.bi-star-fill {
+    color: rgb(216, 216, 0);
+}
+
+/* Global end */
+
+/* Navbar start */
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    margin-bottom: 40px;
+}
+
+.navbar {
+    min-height: 5rem;
+    max-height: 15rem;
+    color: var(--firstColorWhite);
+    padding-right: var(--paddingContentRL);
+    padding-left: var(--paddingContentRL);
+}
+
+/* mengatur logo pada navbar */
+.logo {
+    max-width: 3rem;
+}
+
+.navbar-brand {
+    color: var(--SixthColorGreenOld);
+    font-weight: 600;
+}
+
+.nav-link {
+    font-weight: 600;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Sesuaikan jarak sesuai kebutuhan Anda */
+}
+
+.dropdown-item i {
+    margin-right: 5px; /* Sesuaikan jarak sesuai kebutuhan Anda */
+    font-size: 24px; /* Sesuaikan ukuran ikon sesuai kebutuhan Anda */
+    color: #a9a9a9; /* Sesuaikan warna ikon sesuai kebutuhan Anda */
+    font-weight: bold; /* Menjadikan ikon lebih tebal */
+}
+
+.dropdown-divider {
+    margin: 5px 0; /* Sesuaikan jarak sesuai kebutuhan Anda */
+    border-top: 1px solid #e5e5e5; /* Warna dan ketebalan garis pembagi */
+}
+
+.dropdown-menu {
+    min-width: 200px; /* Sesuaikan lebar dropdown sesuai kebutuhan Anda */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.divider-vertical {
+    border-right: 1px solid #ccc;
+    height: 30px; /* Sesuaikan dengan tinggi yang diinginkan */
+    margin: auto 15px; /* Sesuaikan margin sesuai kebutuhan */
+}
+
+.search {
+    margin-right: 30px;
+}
+
+.nav-link.active {
+    color: blue;
+}
+
+.header .search-form {
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    width: 25rem;
+    height: 3rem;
+    background: #ffffff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.header .search-form.active {
+    right: 1rem;
+    transition: 0.5s linear;
+}
+
+.header .search-form input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: var(--normal-font-size);
+    /* color: var(--black); */
+    padding: 0 1rem;
+    border: none;
+}
+
+.header .search-form label {
+    font-size: 2.2rem;
+    /* padding-right: 1.5rem; */
+    color: aqua;
+    cursor: pointer;
+}
+
+.header .search-form label:hover {
+    color: var(--orange);
+}
+
+/* Navbar End */
+
+/* Login start */
+
+.login-content {
+    padding-left: var(--paddingContentRL);
+    padding-right: var(--paddingContentRL);
+    padding-top: var(--paddingContentTB);
+    padding-bottom: var(--paddingContentTB);
+}
+.submit-login {
+    width: 100%;
+    background-color: var(--ThirdColorGreen);
+    color: var(--firstColorWhite);
+}
+
+.submit-edit {
+    width: 100%;
+    background-color: var(--warning);
+    color: var(--firstColorWhite);
+}
+
+.submit-upload {
+    width: 100%;
+    background-color: var(--create);
+    color: var(--firstColorWhite);
+}
+
+.login-tittle h2 {
+    font-size: var(--h1-font-size);
+    font-weight: 600;
+}
+.login-tittle h4 {
+    font-size: var(--h2-font-size);
+    font-weight: 400;
+}
+
+.form-label {
+    font-weight: 400;
+}
+/* Login End */
+
+img {
+    max-height: 100vh;
+    width: 100%; /* Lebar 100% agar sesuai dengan lebar container */
+    object-fit: cover;
+}
+
+/* Home Start */
+
+.caraousel {
+    max-height: 100vh;
+}
+
+.carousel-caption-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-home {
+    width: 6rem;
+}
+
+.overlay-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%; /* Sesuaikan dengan lebar yang diinginkan */
+    background-color: rgba(
+        255,
+        255,
+        255,
+        35%
+    ); /* Warna latar belakang putih transparan */
+    padding-left: var(--paddingContentRL1);
+    padding-right: var(--paddingContentRL1);
+    padding-top: var(--paddingInElemenMini1);
+    padding-bottom: var(--paddingInElemenMini1);
+    text-align: center;
+    border-radius: 15px; /* Sudut melengkung (rounded) */
+    backdrop-filter: blur(20px);
+}
+
+.overlay-content {
+    color: black; /* Warna teks */
+}
+
+#carouselTitle {
+    font-size: var(--h1-font-size);
+    font-weight: 600;
+}
+
+.button-home {
+    width: 50%;
+}
+
+.app-tittle {
+    padding-top: var(--paddingInElemenMini2);
+}
+
+.app-desc {
+    padding-bottom: var(--paddingInElemenMini);
+}
+
+/* For Kategori style */
+#kategori {
+    padding-left: var(--paddingContentRL);
+    padding-right: var(--paddingContentRL);
+    margin-top: var(--paddingContentRL1);
+}
+
+.category-tittle h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 600;
+    color: var(--ForthColorBlack);
+}
+
+.category-tittle h4 {
+    font-size: var(--normal-font-size);
+    font-weight: 400;
+    color: var(--ForthColorBlack);
+}
+
+.category-name {
+    font-size: var(--h2-font-size);
+    font-weight: 600;
+    color: var(--SixthColorGreenOld);
+}
+/* container{ 
+    padding-left: var(--paddingContentRL);
+    padding-right: var(--paddingContentTB);
+ } */
+
+/* for produk home style */
+#produkhome {
+    padding-left: var(--paddingContentRL);
+    padding-right: var(--paddingContentRL);
+}
+
+.homeProdukTittle h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 600;
+    color: var(--ForthColorBlack);
+}
+.homeProdukTittle h4 {
+    font-size: var(--normal-font-size);
+    font-weight: 400;
+    color: var(--ForthColorBlack);
+}
+
+.card-body {
+    height: auto;
+}
+
+.card-img-top {
+    margin-top: 1rem;
+    margin-left: 1.1rem;
+    margin-right: 1rem;
+}
+
+.produkhomeseemore {
+    width: 30%;
+}
+
+#promo {
+    background-color: var(--SecColorGrey);
+}
+
+.productPrice {
+    color: var(--SixthColorGreenOld);
+    font-weight: 600;
+}
+
+/* Home End */
+
+/* cart start */
+#cart {
+    padding-top: var(--paddingContentRL);
+    padding-left: var(--paddingContentRL);
+    padding-right: var(--paddingContentRL);
+}
+
+#cart th {
+    color: var(--SevenColorGreyOld);
+}
+
+.cart-check {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.tombol-tambah-cart {
+    border: none;
+    background-color: var(--blueChat);
+    color: white;
+}
+
+.tombol-qty {
+    border: none;
+    color: var(--ForthColorBlack);
+}
+
+.tombol-kurang-cart {
+    border: none;
+    background-color: var(--Red);
+    color: white;
+}
+
+.tombol-hapus-cart {
+    border: none;
+    background-color: var(--Red);
+    color: white;
+}
+
+.cart-tittle h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 600;
+    color: var(--ForthColorBlack);
+}
+.cart-tittle h4 {
+    font-size: var(--normal-font-size);
+    font-weight: 400;
+    color: var(--ForthColorBlack);
+}
+
+.checkout-border h1 {
+    font-size: var(--h2-font-size);
+    font-weight: 600;
+    color: var(--ForthColorBlack);
+}
+
+/* cart end */
+
+/* Worker */
+.worker {
+    padding-top: var(--paddingContentRL);
+}
+
+/* Review */
+.review {
+    padding-top: var(--paddingContentRL);
+    padding-left: var(--paddingContentRL);
+    padding-right: var(--paddingContentRL);
+}
+
+.review-tittle h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 600;
+    color: var(--ForthColorBlack);
+}
+
+.review-tittle h4 {
+    font-size: var(--normal-font-size);
+    font-weight: 400;
+    color: var(--ForthColorBlack);
+}
+
+.review-content {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+
+.card {
+    border: none;
+}
+
+.review-name {
+    font-size: var(--normal-font-size);
+    font-weight: 600;
+}
+
+.review-desc {
+    font-size: var(--smaller-font-size);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--ThirdColorGreen);
+    font-size: 0px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--ThirdColorGreen);
+}
+
+/* .swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+} */
+
+/* .swiper-button-prev,
+.swiper-button-next {
+  width: initial;
+  height: initial;
+  font-size: 3rem;
+  color: var(--second-color);
+
+} */
+
+/* .swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: initial;
+  height: initial;
+  font-size: 3rem;
+  color: var(--second-color);
+  display: none;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-pagination-bullet {
+  background-color: hsl(212, 32%, 40%);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--second-color);
+} */
+
+/* Home End */
+#tenagakerja .login-tittle {
+    margin-top: 6rem;
+}
+
+.categoryselect {
+    padding-top: var(--paddingContentRL);
+    padding-bottom: var(--paddingContentTB);
+    padding-left: var(--paddingContentRL);
+    padding-right: var(--paddingContentRL);
+}
+
+.product-detail-name {
+    font-size: var(--h1-font-size);
+    font-weight: 600;
+}
+.description {
+    min-height: 200px;
+    max-height: 200px; /* Tentukan tinggi maksimal sesuai kebutuhan */
+}
+.custom-btn-1 {
+    width: 5rem;
+}
+.custom-btn-2 {
+    width: 15rem;
+}
+.custom-btn-3 {
+    width: 35rem;
+}
+.col-5 {
+    /* height: 24rem; */
+    width: 24rem;
+}
+
+.like-product {
+    background-color: var(--Red);
+    border: none;
+    width: 100%;
+    height: 2.5rem;
+}
+.bi-heart-fill {
+    color: #ffffff;
+    border: #a9a9a9;
+}
+
+.chat-product {
+    background-color: var(--blueChat);
+    border: none;
+    width: 13.5rem;
+    height: 2.5rem;
+}
+
+.add-cart {
+    background-color: var(--ThirdColorGreen);
+    border: none;
+    width: 45.5rem;
+    height: 2.5rem;
+}
+
+.bi-cart-fill {
+    color: #ffffff;
+}
+
+.bi-chat-dots-fill {
+    color: #ffffff;
+}
+.detailProduk {
+    padding-left: var(--paddingContentRL);
+    padding-right: var(--paddingContentRL);
+    padding-top: var(--paddingContentTB);
+}
+
+.tokoname {
+    color: var(--blueChat);
+}
+
+.produk-cari {
+    padding-top: var(--paddingContentTB);
+}
+
+.homeproduk-search-tittle h1 {
+    font-size: var(--h2-font-size);
+    font-weight: 600;
+}
+.homeproduk-search-tittle h1 span {
+    color: var(--ThirdColorGreen);
+}
+
+/* untuk yang keliatan di menu wishlist */
+.like-button-wishlist {
+    background-color: var(--Red);
+    border: none;
+}
+
+.cart-button-wishlist {
+    border: none;
+    background-color: var(--ThirdColorGreen);
+}
+
+/* untuk yang di detail product */
+.wishlist-product-button {
+    background-color: var(--Red);
+    border: none;
+    height: 2.5rem;
+    width: 9rem;
+}
+
+/* Tokodetail */
+.tokodetail {
+    padding-left: var(--paddingContentRL);
+    padding-right: var(--paddingContentRL);
+    padding-top: var(--paddingContentTB);
+    padding-bottom: var(--paddingContentTB);
+}
+
+.follow-toko {
+    background-color: var(--ThirdColorGreen);
+    border: none;
+    width: 13.5rem;
+    height: 2.5rem;
+}
+
+.bi-plus {
+    color: #ffffff;
+}
+
+/* Tokodetailend */
+
+/* Checkout start */
+.checkout {
+    padding-left: var(--paddingContentRL);
+    padding-right: var(--paddingContentRL);
+    padding-top: var(--paddingContentTB);
+    padding-bottom: var(--paddingContentTB);
+}
+
+.checkout-tittle h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 600;
+}
+.checkout-tittle h4 {
+    font-size: var(--normal-font-size);
+    font-weight: 400;
+}
+
+.checkout-subtittle {
+    font-size: var(--h2-font-size);
+    font-weight: 500;
+}
+
+.checkout-form {
+    font-size: var(--normal-font-size);
+}
+
+.form-checkout-label {
+    font-size: var(--normal-font-size);
+}
+.button-checkout a {
+    color: #ffffff;
+}
+#buatpesanan {
+    background-color: var(--blueChat);
+}
+/* Checkout end */
+
+/* Konsultan/Ahli Pakar */
+
+#hapus-konsultan {
+    color: #ffffff;
+    background-color: var(--Red);
+}
+#hapus-konsultan a {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+#edit-konsultan a {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.subtittle h4 {
+    font-size: var(--h2-font-size);
+    font-weight: 600;
+}
+
+.ahlipakar-page {
+    padding-left: var(--paddingContentRL);
+    padding-right: var(--paddingContentRL);
+    padding-top: var(--paddingContentTB);
+    padding-bottom: var(--paddingContentTB);
+}
+
+.ahlipakar-tittle h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 600;
+    color: #a9a9a9;
+}
+
+.detail-ahlipakar {
+    padding-left: var(--paddingContentRL);
+    padding-right: var(--paddingContentRL);
+    padding-top: var(--paddingContentTB);
+    padding-bottom: var(--paddingContentTB);
+}
+
+.hero-name-detail-ahlipakar h1 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.hero-name-detail-ahlipakar h1 span {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--blueChat);
+}
+
+.deskripsi-ahlipakr-detail h4 {
+    font-size: var(--h2-font-size);
+}
+
+.download-ahlipakar {
+    background-color: var(--blueChat);
+}
+.download-ahlipakar a {
+    color: #ffffff;
+}
+
+.chat-ahlipakar a {
+    color: #ffffff;
+}
+
+/* .foto-user-service{
+    width: 30rem;
+} */
+/* Konsultan end */
