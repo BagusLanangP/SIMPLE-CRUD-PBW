@@ -51,10 +51,10 @@
         <input type="text" id="agama" name="agama" required><br><br>
 
         <label for="nik">NIK:</label><br>
-        <input type="number" id="nik" name="nik" required><br><br>
+        <input type="text" id="nik" name="nik" required><br><br>
 
         <label for="no_KK">Nomor KK:</label><br>
-        <input type="number" id="no_KK" name="no_KK" required><br><br>
+        <input type="text" id="no_KK" name="no_KK" required><br><br>
 
         <label for="keperluan">Keperluan:</label><br>
         <input type="text" id="keperluan" name="keperluan" required><br><br>
@@ -81,7 +81,7 @@
         <input type="text" id="kabupaten" name="kabupaten" required><br><br>
 
         <label for="provinsi">Provinsi:</label><br>
-        <input type="text" id="provinsi" name="provinsi" required><br><br>
+        <input type="text" id="provinsi" name="provinsi" required><br><br> 
 
         <input type="submit" value="Submit">
     </form>

@@ -23,8 +23,8 @@ return new class extends Migration
             $table->integer('jenisKelamin');
             $table->string('pekerjaan');
             $table->string('agama');
-            $table->integer('nik');
-            $table->integer('no_KK');
+            $table->string('nik');
+            $table->string('no_KK');
             $table->string('keperluan');
             $table->string('golonganDarah');
             $table->string('rt');

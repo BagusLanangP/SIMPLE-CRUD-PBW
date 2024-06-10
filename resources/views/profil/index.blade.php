@@ -8,5 +8,8 @@
 </head>
 <body>
     <h1>Nama Lengkap : {{ $data->namaLengkap }}</h1>
+
+    <h2><a href="/profil/{{ $data->id }}">Show</a></h2>
+    <h2><a href="/profil/{{ $data->id }}/edit">Edit</a></h2>
 </body>
 </html>

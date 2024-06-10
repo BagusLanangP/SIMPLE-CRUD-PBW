@@ -11,15 +11,13 @@ Route::get('/', function () {
     return view('Homepage.index');
 });
 
-<<<<<<< HEAD
-
 Route::resource('/login', LoginController::class);
 Route::resource('/register', RegisterController::class);
 Route::resource('/profil', ProfilController::class)->middleware('auth');;
-=======
+
 Route::get('/historysurat', [SuratController::class, 'HistorySuratUser']);
 
->>>>>>> 5fa7249882e9da35acac5a44c983d4093c9c0ff7
+
 
 Route::get('/view', function () {
     return view('user.viewsurat');
