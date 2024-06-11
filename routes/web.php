@@ -11,6 +11,9 @@ Route::get('/', function () {
 
 Route::get('/historysurat', [SuratController::class, 'HistorySuratUser']);
 
+Route::delete('/surat/{id}', [SuratController::class, 'destroy'])->name('surat.destroy');
+
+
 
 Route::get('/view', function () {
     return view('user.viewsurat');

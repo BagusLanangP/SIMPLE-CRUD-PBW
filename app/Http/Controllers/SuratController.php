@@ -29,9 +29,15 @@ class SuratController extends Controller
         return view('Homepage.historySurat', $data);
     }
 
-    public function delete(){
-        
+    public function destroy($id)
+{
+    $surat = Surat::find($id);
+    if ($surat) {
+        $surat->delete();
+        return response()->json(['success' => true]);
     }
+    return response()->json(['success' => false]);
+}
 
 
 
@@ -54,13 +60,14 @@ class SuratController extends Controller
             // 'nik' => 'required|unique:users',
         ]);
        
+        
     
          // Tambahkan kode surat acak
         // $validateData['nomorSurat'] = Str::random(10);
         Surat::create($validateData);
         
 
-        return redirect('user/viewsurat');
+        
     }
 
     public function show(Surat $surat){

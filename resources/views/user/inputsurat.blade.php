@@ -20,7 +20,7 @@
                       @endforeach
                   </select>
               </div>
-              <div class="mb-3">
+              {{-- <div class="mb-3">
                   <label for="name" class="form-label">Nama</label>
                   <input type="text" class="form-control" id="name" name="name" required>
               </div>
@@ -31,7 +31,7 @@
               <div class="mb-3">
                   <label for="prodi" class="form-label">Prodi</label>
                   <input type="text" class="form-control" id="prodi" name="prodi" required>
-              </div>
+              </div> --}}
               <button type="submit" class="btn btn-primary">Buat surat</button>
           </form>
       </div>

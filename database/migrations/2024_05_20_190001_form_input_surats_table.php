@@ -11,24 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('surats', function (Blueprint $table) {
+        //
+        Schema::create('inputFormSurats', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('jenissurat')->unsigned();
-            $table->string('kodeSurat');
-            $table->string('value');
-            $table->unsignedBigInteger('user')->unsigned();
-
-
-
-            // $table->string('nomorSurat');
-            // $table->string('kelas');
-            // $table->string('prodi');
-            // $table->string('name');
-            // $table->string('nik');
+            $table->string('field');
+            $table->string('type');
             $table->timestamps();
 
             $table->foreign('jenissurat')->references('id')->on('jenissurats');
-            $table->foreign('user')->references('id')->on('users');
         });
     }
 
@@ -37,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('surats');
+        //
     }
 };
