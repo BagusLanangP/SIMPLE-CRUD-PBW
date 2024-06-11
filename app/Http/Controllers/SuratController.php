@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Surat;
 use App\Models\Jenissurat;
 use Illuminate\Support\Str;
