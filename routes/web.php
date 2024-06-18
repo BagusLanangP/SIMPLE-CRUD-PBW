@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataSuratController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfilController;
@@ -13,7 +14,10 @@ Route::get('/', function () {
 
 Route::resource('/login', LoginController::class);
 Route::resource('/register', RegisterController::class);
-Route::resource('/profil', ProfilController::class)->middleware('auth');;
+Route::resource('/profil', ProfilController::class)->middleware('auth');
+Route::resource('/datasurat', DataSuratController::class)->middleware('auth');
+Route::get('/datasurat/pilih/{id}', [DataSuratController::class, 'pilih'])->middleware('auth');
+
 
 Route::get('/historysurat', [SuratController::class, 'HistorySuratUser']);
 

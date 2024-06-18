@@ -65,9 +65,6 @@
         <label for="no_KK">Nomor KK:</label><br>
         <input type="text" id="no_KK" name="no_KK" value="{{ $data->no_KK }}" required><br><br>
 
-        <label for="keperluan">Keperluan:</label><br>
-        <input type="text" id="keperluan" name="keperluan" value="{{ $data->keperluan }}" required><br><br>
-
         <label for="golonganDarah">Golongan Darah:</label><br>
         <input type="text" id="golonganDarah" name="golonganDarah" value="{{ $data->golonganDarah }}" required><br><br>
 

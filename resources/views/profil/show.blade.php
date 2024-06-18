@@ -18,7 +18,6 @@
         <p>Agama: {{ $data->agama }}</p>
         <p>NIK: {{ $data->nik }}</p>
         <p>Nomor KK: {{ $data->no_KK }}</p>
-        <p>Keperluan: {{ $data->keperluan }}</p>
         <p>Golongan Darah: {{ $data->golonganDarah }}</p>
         <p>RT: {{ $data->rt }}</p>
         <p>RW: {{ $data->rw }}</p>

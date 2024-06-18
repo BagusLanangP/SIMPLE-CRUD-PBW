@@ -25,7 +25,6 @@ return new class extends Migration
             $table->string('agama');
             $table->string('nik');
             $table->string('no_KK');
-            $table->string('keperluan');
             $table->string('golonganDarah');
             $table->string('rt');
             $table->string('rw');

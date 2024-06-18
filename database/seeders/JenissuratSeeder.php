@@ -18,10 +18,16 @@ class JenissuratSeeder extends Seeder
         //
 
         $data = [
-            ['name' => 'Surat Permohonan'],
-            ['name' => 'Surat Keputusan'],
-            ['name' => 'Surat Kuasa'],
-            ['name' => 'Surat Perintah'],     
+            ['name' => 'Biodata Penduduk'],
+            ['name' => 'Wali'],
+            ['name' => 'Keramain'],
+            ['name' => 'Domisili'],   
+            ['name' => 'Dispensasi Waktu'],     
+            ['name' => 'Kelahiran'], 
+            ['name' => 'Permohonan Akta'],
+            ['name' => 'Permohonan Penduduk'],
+            ['name' => 'Permohonan Cerai'],
+            ['name' => 'Undangan'],      
         ];
 
         foreach ( $data as $value){
