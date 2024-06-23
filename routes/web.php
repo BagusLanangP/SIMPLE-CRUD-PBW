@@ -11,6 +11,10 @@ Route::get('/', function () {
     return view('Homepage.index');
 });
 
+
+//For Surat
+
+
 Route::resource('/login', LoginController::class);
 Route::resource('/register', RegisterController::class);
 Route::resource('/profil', ProfilController::class)->middleware('auth');;
@@ -18,6 +22,8 @@ Route::resource('/profil', ProfilController::class)->middleware('auth');;
 Route::get('/historysurat', [SuratController::class, 'HistorySuratUser']);
 
 Route::delete('/surat/{id}', [SuratController::class, 'destroy'])->name('surat.destroy');
+
+Route::get('/surat/{id}', [SuratController::class, 'detail'])->name('surat.detail');
 
 
 
@@ -27,6 +33,8 @@ Route::get('/view', function () {
 });
 Route::get('/buatsurat', [SuratController::class, 'buatsurat']);
 
+Route::post('/inputform', [SuratController::class, 'inputanSurat']);
+Route::post('/simpansurat', [SuratController::class, 'submitSurat']);
 Route::post('/buatsurat/store', [SuratController::class, 'store']);
 Route::get('user/viewsurat', [SuratController::class, 'show']);
 

@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detail_surats', function (Blueprint $table) {
+        //
+        Schema::create('input_form_surats', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('jenisSurat_id')->constrained('jenissurats')->onDelete('cascade');
+            $table->string('field');
+            $table->string('type');
+            // $table->timestamps();
         });
     }
 
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('detail_surats');
+        //
     }
 };
