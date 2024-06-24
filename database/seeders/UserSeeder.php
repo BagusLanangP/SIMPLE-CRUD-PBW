@@ -2,20 +2,13 @@
 
 namespace Database\Seeders;
 
-<<<<<<< HEAD
-use App\Models\User;
-use Illuminate\Support\Str;
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-=======
+
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
->>>>>>> ca0e7b8dedd746d909fffd69fbc28df53698d2e9
 
 class UserSeeder extends Seeder
 {
@@ -26,25 +19,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-<<<<<<< HEAD
-        User::insert([
-            [
-                'name' => 'John Doe',
-                'email' => 'johndoe@example.com',
-                'password' => Hash::make('password'),
-                'phone' => '1234567890',
-                'alamat' => '1234 Main St, Anytown, USA',
-                'role_id' => '2', // Default role 'user'
-                'foto' => null,
-                'email_verified_at' => now(),
-                'status' => 'aktif',
-                'profil' => 1,
-                'remember_token' => Str::random(10),
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            // Tambahkan lebih banyak pengguna jika diperlukan
-=======
         Schema::disableForeignKeyConstraints();
         DB::table('users')->truncate(); 
         Schema::enableForeignKeyConstraints();
@@ -81,8 +55,7 @@ class UserSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' =>Carbon::now(),
             ],
-            // Add more users as needed
->>>>>>> ca0e7b8dedd746d909fffd69fbc28df53698d2e9
+            // Add more users as neede
         ]);
     }
 }

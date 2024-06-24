@@ -32,7 +32,7 @@ class inputFormSuratSeeder extends Seeder
             ],
             [
                 'jenisSurat_id' => 1,
-                'field' => 'waktuLahir',
+                'field' => 'tanggalLahir',
                 'type' => 'date',
             ],
             [
@@ -52,7 +52,7 @@ class inputFormSuratSeeder extends Seeder
             ],
             [
                 'jenisSurat_id' => 1,
-                'field' => 'kelamin',
+                'field' => 'jenisKelamin',
                 'type' => 'text',
             ],
             [

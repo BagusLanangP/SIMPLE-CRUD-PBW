@@ -158,6 +158,5 @@
             </div>
         </div>
     </div>
-    <a class="btn btn-primary" href="/generate-PDF/{{ $kategori }}" role="button" style="margin-bottom: 10px">Download Surat</a>
 </body>
 </html>

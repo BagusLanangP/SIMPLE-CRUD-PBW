@@ -24,17 +24,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
         UserSeeder::class,
         JenissuratSeeder::class,
-<<<<<<< HEAD
-        RoleSeeder::class,
-        ForminputSeeder::class,
-        ProfileSeeder::class,
-
-=======
         InputFormSuratSeeder::class,
         SuratSeeder::class,
         DetailSuratSeeder::class,
         RoleSeeder::class
->>>>>>> ca0e7b8dedd746d909fffd69fbc28df53698d2e9
+
     ]);
     }
 }

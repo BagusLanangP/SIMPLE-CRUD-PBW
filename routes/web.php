@@ -38,6 +38,8 @@ Route::get('/view', function () {
 
 Route::get('generate-pdf', [SuratController::class, 'generatePDF']);
 Route::get('/buatsurat', [SuratController::class, 'buatsurat']);
+Route::get('/generate-PDF/{id}', [SuratController::class, 'generatePDF']);
+
 
 Route::post('/inputform', [SuratController::class, 'inputanSurat']);
 Route::post('/simpansurat', [SuratController::class, 'submitSurat']);

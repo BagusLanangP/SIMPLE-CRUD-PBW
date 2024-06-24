@@ -10,11 +10,11 @@
     <h1>Edit Profil</h1>
 
     @if (session('error'))
-        <p>{{ session('error') }}</p>
+        <p style="color: red;">{{ session('error') }}</p>
     @endif
 
     @if ($errors->any())
-        <div>
+        <div style="color: red;">
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -28,66 +28,75 @@
         @method('PUT')
 
         <label for="namaLengkap">Nama Lengkap:</label><br>
-        <input type="text" id="namaLengkap" name="namaLengkap" value="{{ $data->namaLengkap }}" required><br><br>
+        <input type="text" id="namaLengkap" name="namaLengkap" value="{{ old('namaLengkap', $data->namaLengkap) }}" required>
+        @error('namaLengkap')
+            <div style="color: red;">{{ $message }}</div>
+        @enderror
+        <br><br>
 
         <label for="tempatLahir">Tempat Lahir:</label><br>
-        <input type="text" id="tempatLahir" name="tempatLahir" value="{{ $data->tempatLahir }}" required><br><br>
+        <input type="text" id="tempatLahir" name="tempatLahir" value="{{ old('tempatLahir', $data->tempatLahir) }}" required>
+        @error('tempatLahir')
+            <div style="color: red;">{{ $message }}</div>
+        @enderror
+        <br><br>
 
-        <label for="tanggal">Tanggal Lahir:</label><br>
-        <input type="number" id="tanggal" name="tanggal" value="{{ $data->tanggal }}" required><br><br>
+        <label for="tanggalLahir">Tanggal Lahir:</label><br>
+        <input type="date" id="tanggalLahir" name="tanggalLahir" value="{{ old('tanggalLahir', $data->tanggalLahir) }}" required>
+        @error('tanggalLahir')
+            <div style="color: red;">{{ $message }}</div>
+        @enderror
+        <br><br>
 
-        <label for="bulan">Bulan Lahir:</label><br>
-        <select id="bulan" name="bulan" required>
-            @foreach(['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'] as $bulan)
-                <option value="{{ $bulan }}" {{ $data->bulan == $bulan ? 'selected' : '' }}>{{ $bulan }}</option>
-            @endforeach
-        </select><br><br>
-
-        <label for="tahun">Tahun Lahir:</label><br>
-        <input type="number" id="tahun" name="tahun" value="{{ $data->tahun }}" required><br><br>
-
-        <label for="warganegara">Warga Negara:</label><br>
-        <input type="text" id="warganegara" name="warganegara" value="{{ $data->warganegara }}" required><br><br>
+        <label for="wargaNegara">Warga Negara:</label><br>
+        <input type="text" id="wargaNegara" name="wargaNegara" value="{{ old('wargaNegara', $data->wargaNegara) }}" required>
+        @error('wargaNegara')
+            <div style="color: red;">{{ $message }}</div>
+        @enderror
+        <br><br>
 
         <label for="jenisKelamin">Jenis Kelamin:</label><br>
-        <input type="radio" id="jenisKelamin1" name="jenisKelamin" value="1" {{ $data->jenisKelamin == 1 ? 'checked' : '' }} required>Laki-laki
-        <input type="radio" id="jenisKelamin2" name="jenisKelamin" value="2" {{ $data->jenisKelamin == 2 ? 'checked' : '' }} required>Perempuan<br><br>
+        <input type="radio" id="jenisKelamin1" name="jenisKelamin" value="Laki - Laki" {{ old('jenisKelamin', $data->jenisKelamin) == 'Laki - Laki' ? 'checked' : '' }} required>Laki-laki
+        <input type="radio" id="jenisKelamin2" name="jenisKelamin" value="Perempuan" {{ old('jenisKelamin', $data->jenisKelamin) == 'Perempuan' ? 'checked' : '' }} required>Perempuan
+        @error('jenisKelamin')
+            <div style="color: red;">{{ $message }}</div>
+        @enderror
+        <br><br>
 
         <label for="pekerjaan">Pekerjaan:</label><br>
-        <input type="text" id="pekerjaan" name="pekerjaan" value="{{ $data->pekerjaan }}" required><br><br>
+        <input type="text" id="pekerjaan" name="pekerjaan" value="{{ old('pekerjaan', $data->pekerjaan) }}" required>
+        @error('pekerjaan')
+            <div style="color: red;">{{ $message }}</div>
+        @enderror
+        <br><br>
 
         <label for="agama">Agama:</label><br>
-        <input type="text" id="agama" name="agama" value="{{ $data->agama }}" required><br><br>
+        <input type="text" id="agama" name="agama" value="{{ old('agama', $data->agama) }}" required>
+        @error('agama')
+            <div style="color: red;">{{ $message }}</div>
+        @enderror
+        <br><br>
 
         <label for="nik">NIK:</label><br>
-        <input type="text" id="nik" name="nik" value="{{ $data->nik }}" required><br><br>
+        <input type="text" id="nik" name="nik" value="{{ old('nik', $data->nik) }}" required>
+        @error('nik')
+            <div style="color: red;">{{ $message }}</div>
+        @enderror
+        <br><br>
 
-        <label for="no_KK">Nomor KK:</label><br>
-        <input type="text" id="no_KK" name="no_KK" value="{{ $data->no_KK }}" required><br><br>
+        <label for="nomorKk">Nomor KK:</label><br>
+        <input type="text" id="nomorKk" name="nomorKk" value="{{ old('nomorKk', $data->nomorKk) }}" required>
+        @error('nomorKk')
+            <div style="color: red;">{{ $message }}</div>
+        @enderror
+        <br><br>
 
         <label for="golonganDarah">Golongan Darah:</label><br>
-        <input type="text" id="golonganDarah" name="golonganDarah" value="{{ $data->golonganDarah }}" required><br><br>
-
-        <label for="rt">RT:</label><br>
-        <input type="text" id="rt" name="rt" value="{{ $data->rt }}" required><br><br>
-
-        <label for="rw">RW:</label><br>
-        <input type="text" id="rw" name="rw" value="{{ $data->rw }}" required><br><br>
-
-        <label for="banjar">Banjar:</label><br>
-        <input type="text" id="banjar" name="banjar" value="{{ $data->banjar }}" required><br><br>
-
-        <label for="desa">Desa:</label><br>
-        <input type="text" id="desa" name="desa" value="{{ $data->desa }}" required><br><br>
-
-        <label for="kecamatan">Kecamatan:</label><br>
-        <input type="text" id="kecamatan" name="kecamatan" value="{{ $data->kecamatan }}" required><br><br>
-
-        <label for="kabupaten">Kabupaten:</label><br>
-        <input type="text" id="kabupaten" name="kabupaten" value="{{ $data->kabupaten }}" required><br><br>
-
-        <label for="provinsi">Provinsi:</label><br>
-        <input type="text" id="provinsi" name="provinsi" value="{{ $data->provinsi }}" required><br><br>
+        <input type="text" id="golonganDarah" name="golonganDarah" value="{{ old('golonganDarah', $data->golonganDarah) }}" required>
+        @error('golonganDarah')
+            <div style="color: red;">{{ $message }}</div>
+        @enderror
+        <br><br>
 
         <input type="submit" value="Update">
     </form>

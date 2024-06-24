@@ -18,16 +18,11 @@ return new class extends Migration
             $table->string('tempatLahir');
             $table->string('tanggalLahir');
             $table->string('wargaNegara');
-            $table->string('kelamin');
+            $table->string('jenisKelamin');
             $table->string('pekerjaan');
             $table->string('agama');
             $table->string('nik');
-<<<<<<< HEAD
-            $table->string('no_KK');
-=======
             $table->string('nomorKk');
-            $table->string('keperluan');
->>>>>>> ca0e7b8dedd746d909fffd69fbc28df53698d2e9
             $table->string('golonganDarah');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

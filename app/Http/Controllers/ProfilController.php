@@ -42,39 +42,37 @@ class ProfilController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $userID = auth()->user()->id;
-        $validated = $request->validate([
-            'namaLengkap' => 'required|string|max:255',
-            'tempatLahir' => 'required|string|max:255',
-            'tanggalLahir' => 'required',
-            'warganegara' => 'required|string|max:255',
-            'kelamin' => 'required|integer|in:1,2',
-            'pekerjaan' => 'required|string|max:255',
-            'agama' => 'required|string|max:255',
-            'nik' => 'required|unique:profils,nik',
-            'nomorKk' => 'required|unique:profils,no_KK',
-            'keperluan' => 'required|string|max:255',
-            'golonganDarah' => 'required|string|max:2',
-            // 'rt' => 'required|string|max:10',
-            // 'rw' => 'required|string|max:10',
-            // 'banjar' => 'required|string|max:255',
-            // 'desa' => 'required|string|max:255',
-            // 'kecamatan' => 'required|string|max:255',
-            // 'kabupaten' => 'required|string|max:255',
-            // 'provinsi' => 'required|string|max:255',
-        ]);
-        $validated['user_id'] = $userID;
+{
+    $userID = auth()->user()->id;
+    $validated = $request->validate([
+        'namaLengkap' => 'required|string|max:255',
+        'tempatLahir' => 'required|string|max:255',
+        'tanggalLahir' => 'required|date',
+        'warganegara' => 'required|string|max:255',
+        'jenisKelamin' => 'required|string',
+        'pekerjaan' => 'required|string|max:255',
+        'agama' => 'required|string|max:255',
+        'nik' => 'required|unique:profils,nik',
+        'nomorKk' => 'required|unique:profils,nomorKk',
+        'golonganDarah' => 'required|string|max:2',
+    ], [
+        'required' => ':attribute wajib diisi.',
+        'string' => ':attribute harus berupa teks.',
+        'max' => ':attribute tidak boleh lebih dari :max karakter.',
+        'unique' => ':attribute sudah terdaftar.',
+        'integer' => ':attribute harus berupa angka.',
+        'in' => ':attribute tidak valid.',
+        'date' => ':attribute harus berupa tanggal yang valid.'
+    ]);
 
+    $validated['user_id'] = $userID;
 
-        DB::table('users')->where('id', $userID)->update(['profil' => 1]);
+    DB::table('users')->where('id', $userID)->update(['profil' => 1]);
 
-        DB::table('profils')->insert($validated);
+    DB::table('profils')->insert($validated);
 
-        // Profil::create($validated);
-
-        return redirect('/');
-    }
+    return redirect('/profil');
+}
 
     /**
      * Display the specified resource.
@@ -122,8 +120,7 @@ class ProfilController extends Controller
         'pekerjaan' => 'required|string|max:255',
         'agama' => 'required|string|max:255',
         'nik' => 'required|digits:16|unique:profils,nik,' . $data->id,
-        'no_KK' => 'required|digits:16|unique:profils,no_KK,' . $data->id,
-        'keperluan' => 'required|string|max:255',
+        'nomorKk' => 'required|digits:16|unique:profils,no_KK,' . $data->id,
         'golonganDarah' => 'required|string|max:2',
         'rt' => 'required|string|max:10',
         'rw' => 'required|string|max:10',

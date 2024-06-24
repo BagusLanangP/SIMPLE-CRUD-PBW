@@ -22,24 +22,9 @@ class JenissuratSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()],
 
-<<<<<<< HEAD
-        $data = [
-            ['name' => 'Biodata Penduduk'],
-            ['name' => 'Wali'],
-            ['name' => 'Keramain'],
-            ['name' => 'Domisili'],   
-            ['name' => 'Dispensasi Waktu'],     
-            ['name' => 'Kelahiran'], 
-            ['name' => 'Permohonan Akta'],
-            ['name' => 'Permohonan Penduduk'],
-            ['name' => 'Permohonan Cerai'],
-            ['name' => 'Undangan'],      
-        ];
-=======
             ['namaJenisSurat' => 'Surat Wali',
              'deskripsi' => 'Surat wali adalah dokumen resmi yang menyatakan seseorang ditunjuk sebagai wali dari individu yang tidak dapat bertindak atas namanya sendiri, seperti anak di bawah umur, orang dengan kebutuhan khusus, atau orang yang tidak mampu secara hukum. Surat ini biasanya diperlukan dalam berbagai situasi hukum dan administratif untuk memastikan hak dan kepentingan individu yang berada di bawah perwalian tersebut terlindungi. Berikut adalah penjelasan lebih rinci mengenai surat wali:', 'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()],
->>>>>>> ca0e7b8dedd746d909fffd69fbc28df53698d2e9
 
             ['namaJenisSurat' => 'Surat Keramaian', 'deskripsi' => 'Surat Keramaian adalah dokumen resmi yang diperlukan untuk mengadakan acara yang melibatkan keramaian atau perkumpulan massa, seperti pesta pernikahan, konser, festival, pawai, atau kegiatan lainnya yang berpotensi menarik banyak orang. ', 'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()],

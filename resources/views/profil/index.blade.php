@@ -7,9 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+    @if ($data){
     <h1>Nama Lengkap : {{ $data->namaLengkap }}</h1>
-
+    
     <h2><a href="/profil/{{ $data->id }}">Show</a></h2>
     <h2><a href="/profil/{{ $data->id }}/edit">Edit</a></h2>
+    }@else
+        <p>Data profil tidak ditemukan.</p>
+    @endif
 </body>
 </html>

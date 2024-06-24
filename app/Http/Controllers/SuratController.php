@@ -7,7 +7,7 @@ use App\Models\Surat;
 use App\Models\Profil;
 use App\Models\Jenissurat;
 use App\Models\DetailSurat;
-use Illuminate\Support\Str;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use App\Models\InputFormSurat;
 use Illuminate\Support\Facades\Auth;
@@ -23,11 +23,23 @@ class SuratController extends Controller
 
     //nampilin form surat
     public function buatsurat(Request $request, Surat $surat){
+        if (!Auth::check()) {
+             return redirect()->intended('/login');
+        }
         $jenisSurat = Jenissurat::all();
         $data = array('jenisSurat' => $jenisSurat);
         return view('Homepage.BuatSurat.index', $data);
+
     }
+
     public function inputanSurat(Request $request){
+        $user = Auth::user();
+        $isiProfil = $user->profil;
+        // Mengecek apakah user sudah mengisi Profile 
+        if (!$isiProfil){
+            return redirect('/profil');
+        }
+
         $jenissurat = $request->input('jenissurat');
         $inputFormSurat = InputFormSurat::where('jenisSurat_id', $jenissurat)->get();
         $profil = Profil::where('user_id', auth()->user()->id)->first();
@@ -39,7 +51,7 @@ class SuratController extends Controller
             'inputFormSurat' => $inputFormSurat,
             'jenisSurat' => $jenisSurat
         ];
-        return view('Homepage.inputSurat.index', compact('inputFormSurat', 'jenisSurat', 'profil'));
+        return view('Homepage.inputSurat.index',  compact('inputFormSurat', 'jenisSurat', 'profil'));
         // return view('Homepage.inputSurat.index', $data);
     }
 
@@ -92,11 +104,12 @@ class SuratController extends Controller
 
     public function detail($id){
         $surat = Surat::with('jenisSurat')->findOrFail($id);
+        $kategori = $surat->id;
         $jenisSurat = $surat->jenisSurat->namaJenisSurat;
         $detailSurat = DetailSurat::where('surat_id', $surat->id)->get();
         switch ($jenisSurat) {
             case 'Biodata Penduduk':
-                return view('user.surat_biodata', compact('surat', 'detailSurat', 'jenisSurat'));
+                return view('user.surat_biodata', compact('surat', 'detailSurat', 'jenisSurat', 'kategori'));
             case 'Surat Izin':
                 return view('surat.izin', compact('surat'));
             // Tambahkan kasus lainnya sesuai dengan jenis surat yang ada
@@ -154,12 +167,28 @@ class SuratController extends Controller
         return view('user.viewsurat', $data);
     }
 
-    public function generatePDF(){
-        
+    public function generatePDF($id){
+        $surat = Surat::with('jenisSurat')->findOrFail($id);
+        $jenisSurat = $surat->jenisSurat->namaJenisSurat;
+        $detailSurat = DetailSurat::where('surat_id', $surat->id)->get();
+        switch ($jenisSurat) {
+            case 'Biodata Penduduk':
+                $pdf = pdf::loadView('user.surat_biodata_Print', compact('surat', 'detailSurat', 'jenisSurat'));
+                return $pdf->stream('test.pdf');
+            case 'Surat Izin':
+                $pdf = pdf::loadView('user.surat_biodata', compact('surat', 'detailSurat', 'jenisSurat'));
+                return $pdf->stream('test.pdf');
+                return view('surat.izin', compact('surat'));
+            // Tambahkan kasus lainnya sesuai dengan jenis surat yang ada
+            default:
+                return view('surat.default', compact('surat'));}
+
 
         $pdf = pdf::loadView('user.print');
-        return $pdf->download('test.pdf');
+        return $pdf->stream('test.pdf');
            
     }
+
+    
 
 }
