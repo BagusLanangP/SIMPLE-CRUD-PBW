@@ -31,6 +31,11 @@ class User extends Authenticatable
         return $this->morphOne(Profil::class, 'id');
     }
 
+    public function userSurat()
+    {
+        
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -16,23 +16,19 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->string('namaLengkap');
             $table->string('tempatLahir');
-            $table->integer('tanggal');
-            $table->string('bulan');
-            $table->integer('tahun');
-            $table->string('warganegara');
-            $table->integer('jenisKelamin');
+            $table->string('tanggalLahir');
+            $table->string('wargaNegara');
+            $table->string('kelamin');
             $table->string('pekerjaan');
             $table->string('agama');
             $table->string('nik');
+<<<<<<< HEAD
             $table->string('no_KK');
+=======
+            $table->string('nomorKk');
+            $table->string('keperluan');
+>>>>>>> ca0e7b8dedd746d909fffd69fbc28df53698d2e9
             $table->string('golonganDarah');
-            $table->string('rt');
-            $table->string('rw');
-            $table->string('banjar');
-            $table->string('desa');
-            $table->string('kecamatan');
-            $table->string('kabupaten');
-            $table->string('provinsi');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

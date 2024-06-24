@@ -59,7 +59,7 @@
         <label for="golonganDarah">Golongan Darah:</label><br>
         <input type="text" id="golonganDarah" name="golonganDarah" required><br><br>
 
-        <label for="rt">RT:</label><br>
+        {{-- <label for="rt">RT:</label><br>
         <input type="text" id="rt" name="rt" required><br><br>
 
         <label for="rw">RW:</label><br>
@@ -78,7 +78,7 @@
         <input type="text" id="kabupaten" name="kabupaten" required><br><br>
 
         <label for="provinsi">Provinsi:</label><br>
-        <input type="text" id="provinsi" name="provinsi" required><br><br> 
+        <input type="text" id="provinsi" name="provinsi" required><br><br>  --}}
 
         <input type="submit" value="Submit">
     </form>

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 * {
@@ -35,6 +35,11 @@
     --paddingInElemenMini: 4rem;
     --paddingInElemenMini1: 3rem;
     --paddingInElemenMini2: 1.5rem;
+}
+
+
+.has-value {
+    background-color: #f0f0f0; /* Warna keabuan */
 }
 
 /* 
