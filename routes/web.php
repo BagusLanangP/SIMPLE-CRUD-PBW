@@ -26,6 +26,8 @@ Route::get('/historysurat', [SuratController::class, 'HistorySuratUser']);
 Route::get('/view', function () {
     return view('user.viewsurat');
 });
+
+Route::get('generate-pdf', [SuratController::class, 'generatePDF']);
 Route::get('/buatsurat', [SuratController::class, 'buatsurat']);
 
 Route::post('/buatsurat/store', [SuratController::class, 'store']);

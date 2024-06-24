@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Surat;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Jenissurat;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -70,5 +71,12 @@ class SuratController extends Controller
         return view('user.viewsurat', $data);
     }
 
+    public function generatePDF(){
+        
+
+        $pdf = pdf::loadView('user.print');
+        return $pdf->download('test.pdf');
+           
+    }
 
 }
