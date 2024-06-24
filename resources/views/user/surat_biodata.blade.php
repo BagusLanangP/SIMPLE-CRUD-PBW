@@ -146,10 +146,13 @@
         <div class="row mt-5">
             <div class="col-6 text-center">
                 <p>Mengetahui,</p>
-                <p><strong></strong></p>
+                <p><strong>Kepala Desa</strong> Komang jackson</p>
                 <p></p>
             </div>
             <div class="col-6 text-center">
+                <p>Jimbaran, 11 Juni</p>
+                <p><strong>Komang jackson</strong></p>
+                <p>Kepala Desa Amerika</p>
                 {{-- <p>{{ tempat }}, {{ tanggal }}</p>
                 <p><strong>{{ kepala_desa }}</strong></p>
                 <p>Kepala Desa {{ desa }}</p> --}}

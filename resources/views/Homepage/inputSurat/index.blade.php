@@ -15,7 +15,7 @@
                 <div class="mb-3">
                     @foreach($inputFormSurat as $input)
                         <label for="{{ $input->field }}">{{ ucfirst($input->field) }}</label>
-                        <input type="{{ $input->type }}" class="form-control" id="{{ $input->field }}" name="{{ $input->field }}"  value="{{ old($input->field, $profil->{$input->field}) }}" 
+                        <input type="{{ $input->type }}" class="form-control {{ old($input->field, $profil->{$input->field}) ? 'has-value' : '' }}" id="{{ $input->field }}" name="{{ $input->field }}"  value="{{ old($input->field, $profil->{$input->field})}}" 
                         placeholder=" {{ $input->field }}" required>
                     @endforeach
                 </div>

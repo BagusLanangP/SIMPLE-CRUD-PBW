@@ -24,120 +24,71 @@ class inputFormSuratSeeder extends Seeder
                 'jenisSurat_id' => 1,
                 'field' => 'namaLengkap',
                 'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
             ],
             [
                 'jenisSurat_id' => 1,
                 'field' => 'tempatLahir',
                 'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
             ],
             [
                 'jenisSurat_id' => 1,
                 'field' => 'waktuLahir',
                 'type' => 'date',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
             ],
             [
                 'jenisSurat_id' => 1,
                 'field' => 'umur',
                 'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
             ],
             [
                 'jenisSurat_id' => 1,
                 'field' => 'wargaNegara',
                 'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
             ],
             [
                 'jenisSurat_id' => 1,
                 'field' => 'agama',
                 'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
             ],
             [
                 'jenisSurat_id' => 1,
                 'field' => 'kelamin',
                 'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
             ],
             [
                 'jenisSurat_id' => 1,
                 'field' => 'pekerjaan',
                 'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
             ],
             [
                 'jenisSurat_id' => 1,
                 'field' => 'alamat',
                 'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
             ],
             [
                 'jenisSurat_id' => 1,
                 'field' => 'nik',
                 'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
-            ],
-            [
-                'jenisSurat_id' => 1,
-                'field' => 'tempatLahir',
-                'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
-            ],
-            [
-                'jenisSurat_id' => 1,
-                'field' => 'tanggalLahir',
-                'type' => 'date',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
-            ],
-            [
-                'jenisSurat_id' => 1,
-                'field' => 'alamat',
-                'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
             ],
             [
                 'jenisSurat_id' => 1,
                 'field' => 'nomorKk',
                 'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
             ],
             [
                 'jenisSurat_id' => 1,
                 'field' => 'keperluan',
                 'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
             ],
             [
                 'jenisSurat_id' => 1,
                 'field' => 'berlaku',
                 'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
             ],
             [
                 'jenisSurat_id' => 1,
                 'field' => 'golonganDarah',
                 'type' => 'text',
-                // 'created_at' => Carbon::now(),
-                // 'updated_at' => Carbon::now()
             ],
 
 
@@ -240,7 +191,67 @@ class inputFormSuratSeeder extends Seeder
                 'type' => 'text',
             ],
 
-
+            //Surat Domisili
+            [
+                'jenisSurat_id' => 4,
+                'field' => 'namaLengkap',
+                'type' => 'text',
+            ],
+            [
+                'jenisSurat_id' => 4,
+                'field' => 'nik',
+                'type' => 'text',
+            ],
+            [
+                'jenisSurat_id' => 4,
+                'field' => 'tempatLahir',
+                'type' => 'text',
+            ],
+            [
+                'jenisSurat_id' => 4,
+                'field' => 'tanggalLahir',
+                'type' => 'date',
+            ],
+            [
+                'jenisSurat_id' => 4,
+                'field' => 'kelamin',
+                'type' => 'text',
+            ],
+            [
+                'jenisSurat_id' => 4,
+                'field' => 'agama',
+                'type' => 'text',
+            ],
+            [
+                'jenisSurat_id' => 4,
+                'field' => 'status',
+                'type' => 'text',
+            ],
+            [
+                'jenisSurat_id' => 4,
+                'field' => 'pendidikan',
+                'type' => 'text',
+            ],
+            [
+                'jenisSurat_id' => 4,
+                'field' => 'pekerjaan',
+                'type' => 'text',
+            ],
+            [
+                'jenisSurat_id' => 4,
+                'field' => 'wargaNegara',
+                'type' => 'text',
+            ],
+            [
+                'jenisSurat_id' => 4,
+                'field' => 'alamat',
+                'type' => 'text',
+            ],
+            [
+                'jenisSurat_id' => 4,
+                'field' => 'keperluan',
+                'type' => 'text',
+            ],
 
             //Surat Dispensasi Waktu
             [
@@ -268,6 +279,9 @@ class inputFormSuratSeeder extends Seeder
                 'field' => 'alamat',
                 'type' => 'text',
             ],
+
+            //Surat Kelahiran
+
 
 
 
