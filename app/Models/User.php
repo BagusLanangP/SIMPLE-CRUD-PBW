@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class User extends Authenticatable
 {
@@ -16,11 +17,24 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
+    protected $guarded = [
+        'id'
     ];
+
+    public function roles()
+    {
+        return $this->belongsTo(Role::class, 'id');
+    }
+
+    public function profil(): MorphOne
+    {
+        return $this->morphOne(Profil::class, 'id');
+    }
+
+    public function userSurat()
+    {
+        
+    }
 
     /**
      * The attributes that should be hidden for serialization.

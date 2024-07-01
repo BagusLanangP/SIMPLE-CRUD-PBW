@@ -38,6 +38,8 @@
     <script>
         feather.replace();
         $(document).ready(function() {
+
+            @yield('scripts')
             // Fade in saat halaman dimuat
             $(".form-surat-box").fadeIn(800);
             $(".history-surat-content").fadeIn(800);
@@ -105,6 +107,9 @@
             $(window).on('beforeunload', function() {
                 $('.history-surat-content').fadeOut(1000);
             });
+
+
+            
         });
     </script>
 </body>

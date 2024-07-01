@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
+  <meta http-equiv="Content-Type" content="text/html"/>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cetak Dokumen</title>
   <link rel="stylesheet" href="{{ asset('css/view-surat.css') }}">
@@ -45,8 +45,6 @@
       </div>
     </div>
   </div>
-
-  <a href="{{ url('generate-pdf') }}"><h1>PRINT</h1></a>
   
 <script src="{{ asset('JS/view-surat.js') }}"></script>
 </body>
